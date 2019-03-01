@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { FormattedMessage} from 'react-intl'
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -9,7 +10,13 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            <FormattedMessage
+              id="add.edit"
+              defaultMessage="Edit {code} and save to reload."
+              values={{
+                  code: <code>src/App.js</code>
+              }}
+            />
           </p>
           <a
             className="App-link"
@@ -17,7 +24,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            <FormattedMessage id="app.learn" defaultMessage="Learn React" />
           </a>
         </header>
       </div>
